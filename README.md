@@ -20,12 +20,13 @@
 
 #### Setup for this assignment
 
-1 pt: Create a new github public repo (you'll send in the link) and call it '3-layer-single-script'
+* 1 pt: Create a new github public repo (you'll send in the link) and call it '3-layer-single-script'
 Clone the repo to your local machine
-1 pt: Create a requirements.txt file with 'pytest' in it
+* 1 pt: Create a requirements.txt file with 'pytest' in it
 Copy the file provided HERE "db_viewer.py" into the repo (so at this point, there should be only two files, except maybe a readme if you added one)
-1 pt: Create a .gitignore file in your repo and add env in the file (this will keep our environment from getting checked into github.
-After the setup above, you should run python3 -m venv env to create the virtual environment, activate it and then run pip install -r requiremts.txt to install pytest.
+* 1 pt: Create a .gitignore file in your repo and add env in the file (this will keep our environment from getting checked into github.
+
+After the setup above, you should run `python3 -m venv env` to create the virtual environment, activate it and then run `pip install -r requiremts.txt` to install pytest.
 
 #### Checkpoint:
 
@@ -53,6 +54,8 @@ Makefiles are some of the original automation provided by linux. It was intended
 * 1 pt: Add a file named makefile to your project.
 
 I'll give you the contents here and your task for this section will be to verify these work. These will be run when we test your repo contents in the end.
+
+```python
 default:
     @cat makefile
 
@@ -67,6 +70,7 @@ test:
 
 clean:
     rm aquarium.py
+```
 
 #### Now let's test it out
 

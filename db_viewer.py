@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import pytest
 
 
 class Singleton:
@@ -98,9 +99,18 @@ def test_resetting_after_db_creation():
     db_a.get_cursor()
     assert 2 == len(db_b.sql("SELECT * FROM fish;"))
 
+@pytest.fixture
+def the_fixture():
+    conn = sqlite3.connect("aquarium.db")
+    yield conn
+
+def test_fixture(the_fixture):
+    conn = the_fixture
+    assert 2 == len(list(conn.execute("SELECT * FROM fish;")))
+
 
     
-if __name__=="__main__":
+if __name__ == "__main__":
 
     
     db = Singleton()
